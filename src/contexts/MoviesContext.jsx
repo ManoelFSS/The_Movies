@@ -1,0 +1,63 @@
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import axios from "axios"
+
+// Criando o contexto
+const MoviesContext = createContext();
+
+// Provedor do contexto
+export const MoviesContextProvider = ({ children }) => {
+
+  const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhODAzMzJlY2Q2NzQ5ODAyM2I2NGM2NzQ5OWZiZDE1MiIsInN1YiI6IjY0MTFhOWY2ZWRlMWIwMjg2MzVkMWRiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-EYaxTyNfbwbkM_CkkFkQLH7hm0XRyXzGF3vveuhfN8';
+  const API_BASE = 'https://api.themoviedb.org/3/movie/popular';
+
+  const [moviesData, setMoviesData] = useState([]);
+  
+  const getMoviesFromDBMovies = async () => {
+   
+      const options = {
+        method: 'GET',
+        url:API_BASE,
+       
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${API_KEY} `,
+        }
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+
+          const DATA = response.data.results;
+       
+          DATA.map((movies)=> {
+            movies.poster_path = `https://image.tmdb.org/t/p/w200${movies.poster_path}`
+          });
+
+          setMoviesData(DATA);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+  };
+
+  useEffect(()=> {
+     getMoviesFromDBMovies()
+  }, [])
+
+  
+
+ 
+  return (
+    <MoviesContext.Provider value={
+        { 
+            moviesData
+        }
+    }>
+      {children}
+    </MoviesContext.Provider>
+  );
+};
+
+// Hook personalizado para usar o contexto
+export const useMoviesContext = () => useContext(MoviesContext);
