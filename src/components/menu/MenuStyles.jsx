@@ -4,7 +4,7 @@ export const StyledUl = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     list-style: none;
 
     li {

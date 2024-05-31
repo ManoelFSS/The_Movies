@@ -9,15 +9,17 @@ export const StyledHeader = styled.header`
     color: white;
     position:fixed;
     width: 100%;
-    z-index: 10;
     top: 0;
+    z-index: 10;
+   
 `;
 
 export const HeaderConteiner = styled.section `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 80%;
+    // border: 1px solid red;
     h1 {
         font-size: 2.4rem;
         cursor: pointer;
@@ -25,5 +27,5 @@ export const HeaderConteiner = styled.section `
 `
 export const Navibar = styled.section `
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
 `
