@@ -20,6 +20,7 @@ export const ContainerMovie = styled.section`
         gap: 10px;
         padding: 30px 0px;
         align-items: flex-end;
+      
 
         h1 {
             font-size: 2.4rem;
@@ -52,7 +53,6 @@ export const ContainerMovie = styled.section`
 export const MovieDetails = styled.section`
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
 
     figure {
         width:260px;
@@ -83,9 +83,35 @@ export const MovieDetails = styled.section`
     }
 
     article {
-        min-width:300px;
+        min-width:280px;
         padding: 10px 0px;
     }
+
+   
+    @media (max-width: 780px) {
+        flex-wrap: wrap;
+
+        h2, h3, p {
+            padding: 10px 0px;
+        }
+    }
+
+    @media (max-width: 445px) {
+        gap: 0rem;
+
+        figure {
+            width:250px;
+            height: 400px;
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        
+    }
+
 `
 export const  ContainerSimilar = styled.section`
     display: flex;
