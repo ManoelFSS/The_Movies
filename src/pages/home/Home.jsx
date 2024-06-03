@@ -6,7 +6,7 @@ export const Home = () => {
     return (
         <>
             <Header title={"O Movies"}/>
-              <Main/>
+            <Main/>
             <Footer/>
         </>
     )

@@ -5,7 +5,7 @@ import { StyledHeader, HeaderConteiner, Navibar } from "./HeaderStyles"
 
 export const Header = ({ title }) => {
     return (
-        <StyledHeader StyledHeader>
+        <StyledHeader>
             <HeaderConteiner>
                 <h1>{title}</h1>
                 <Navibar>

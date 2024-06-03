@@ -8,15 +8,17 @@ const MoviesContext = createContext();
 export const MoviesContextProvider = ({ children }) => {
 
   const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhODAzMzJlY2Q2NzQ5ODAyM2I2NGM2NzQ5OWZiZDE1MiIsInN1YiI6IjY0MTFhOWY2ZWRlMWIwMjg2MzVkMWRiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-EYaxTyNfbwbkM_CkkFkQLH7hm0XRyXzGF3vveuhfN8';
-  const API_BASE = 'https://api.themoviedb.org/3/movie/popular';
+  const API_BASE = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1';
+
+  const [url, setUrl] = useState(API_BASE);
 
   const [moviesData, setMoviesData] = useState([]);
   
-  const getMoviesFromDBMovies = async () => {
+  const getMoviesFromDBMovies = async (url) => {
    
       const options = {
         method: 'GET',
-        url:API_BASE,
+        url:url,
        
         headers: {
           accept: 'application/json',
@@ -35,6 +37,7 @@ export const MoviesContextProvider = ({ children }) => {
           });
 
           setMoviesData(DATA);
+         
         })
         .catch(function (error) {
           console.error(error);
@@ -42,8 +45,9 @@ export const MoviesContextProvider = ({ children }) => {
   };
 
   useEffect(()=> {
-     getMoviesFromDBMovies()
-  }, [])
+     getMoviesFromDBMovies(url)
+   
+  }, [url])
 
   
 
@@ -51,7 +55,7 @@ export const MoviesContextProvider = ({ children }) => {
   return (
     <MoviesContext.Provider value={
         { 
-            moviesData
+           moviesData,
         }
     }>
       {children}

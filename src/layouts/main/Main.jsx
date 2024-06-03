@@ -1,23 +1,32 @@
 import React from "react"
-import { StyledMain, ContainerMovies, Card } from "./MainStyles"
+import { StyledMain, ContainerMovies } from "./MainStyles"
 import { useMoviesContext } from "../../contexts/MoviesContext"
+import { Link } from "react-router-dom"
+import { Card } from "../../components/card/Card"
 
 
 export const Main = () => {
 
     const { moviesData } = useMoviesContext()
-    console.log(moviesData)
-
+   
     return (
         <StyledMain>
             <ContainerMovies>
               {moviesData.map((movie) => (
-                <Card key={movie.id}>
-                    <img src={movie.poster_path} alt={movie.title} />
-                </Card>
+              
+                    <Link 
+                        to={`/MovieDetails/${movie.id}`} 
+                        key={movie.id}
+                    >
+                       
+                        <Card 
+                            image={movie.poster_path} 
+                            name={movie.title}
+                        />   
+                    </Link>
+             
               ))}
             </ContainerMovies>
-           
         </StyledMain>
     )
 }
