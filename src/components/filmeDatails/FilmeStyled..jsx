@@ -124,10 +124,11 @@ export const  ContainerSimilar = styled.section`
         justify-content:;
         align-items:center;
         width: 80%;
+       
+        padding: 0px 30px;
         gap: 2rem;
         overflow-x:auto;
-        padding: 1rem 1rem;
-        margin-bottom: 2rem;
+      
 
         background-color:  rgba(255, 255, 255, 0.1);
 
@@ -146,6 +147,8 @@ export const  ContainerSimilar = styled.section`
         figure {
             width: 170px;
             height: 240px;
+            margin-bottom: 20px;
+            margin-top: 25px;
         }
 
         @media (max-width: 780px) {
@@ -157,6 +160,8 @@ export const  ContainerSimilar = styled.section`
         @media (max-width: 445px) {
             width: 90%;
         }
+
+        margin-bottom: 50px;
      
     }
 
