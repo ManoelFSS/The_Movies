@@ -7,8 +7,11 @@ const MoviesContext = createContext();
 // Provedor do contexto
 export const MoviesContextProvider = ({ children }) => {
 
+ 
+
   const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhODAzMzJlY2Q2NzQ5ODAyM2I2NGM2NzQ5OWZiZDE1MiIsInN1YiI6IjY0MTFhOWY2ZWRlMWIwMjg2MzVkMWRiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-EYaxTyNfbwbkM_CkkFkQLH7hm0XRyXzGF3vveuhfN8';
   const API_BASE = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1';
+ 
 
   const [url, setUrl] = useState(API_BASE);
 
@@ -46,8 +49,15 @@ export const MoviesContextProvider = ({ children }) => {
 
   useEffect(()=> {
      getMoviesFromDBMovies(url)
-   
+    
   }, [url])
+
+  const hendleCategoriaMovies = async (categoria) => {
+     setUrl(categoria)
+  }
+
+  
+
 
   
 
@@ -56,6 +66,7 @@ export const MoviesContextProvider = ({ children }) => {
     <MoviesContext.Provider value={
         { 
            moviesData,
+           hendleCategoriaMovies
         }
     }>
       {children}
