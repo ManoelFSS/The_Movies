@@ -5,7 +5,21 @@ export const ContainerArea = styled.div`
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
+    background: url(${props => props.backdrop_path}) no-repeat center / 110% 100%;
+    position: relative;
 
+    @media (max-width: 370px) {
+        background:none;
+    }
+
+`
+
+export const Blur = styled.div`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 0;
 `
 
 export const ContainerMovie = styled.section`
@@ -17,35 +31,55 @@ export const ContainerMovie = styled.section`
 
     div {
         display: flex;
-        gap: 10px;
-        padding: 30px 0px;
-        align-items: flex-end;
-      
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-        h1 {
-            font-size: 2.4rem;
-            cursor: pointer;
-        }
+        section {
+            display: flex;
+            gap: 10px;
+            padding: 30px 0px;
+            align-items: flex-end;
 
-        span {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1.3 rem;
-            margin-bottom: 4px;
-        }
-
-        @media (max-width: 445px) {
-            flex-wrap: wrap;
             h1 {
-                font-size: 2rem;
+                font-size: 2.4rem;
                 cursor: pointer;
+                position: relative;
+                z-index: 1;
             }
     
             span {
                 color: rgba(255, 255, 255, 0.6);
-                font-size: 1rem;
-                margin-bottom: 4px;
+                font-size: 1.4 rem;
+                margin-bottom: 9px;
+                margin-right: 5px;
+                position: relative;
+                z-index: 1;
+            }
+    
+            @media (max-width: 445px) {
+                flex-wrap: wrap;
+                h1 {
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+        
+                span {
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 1rem;
+                    margin-bottom: 4px;
+                }
             }
         }
+
+        @media (max-width: 576px) {
+            button {
+               margin-bottom: 30px;
+            }
+        }
+      
+
+       
     }
    
 `
@@ -53,6 +87,8 @@ export const ContainerMovie = styled.section`
 export const MovieDetails = styled.section`
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 
     figure {
         width:260px;
@@ -124,13 +160,11 @@ export const  ContainerSimilar = styled.section`
         justify-content:;
         align-items:center;
         width: 80%;
-       
-        padding: 0px 30px;
         gap: 2rem;
         overflow-x:auto;
-      
-
-        background-color:  rgba(255, 255, 255, 0.1);
+        overflow-y: hidden;
+        background-color:  rgba(000, 000, 000, 0);
+        padding:20px 0px;
 
         &::-webkit-scrollbar {
            height: 6px;
@@ -146,9 +180,7 @@ export const  ContainerSimilar = styled.section`
 
         figure {
             width: 170px;
-            height: 240px;
-            margin-bottom: 20px;
-            margin-top: 25px;
+            height: 230px;
         }
 
         @media (max-width: 780px) {
@@ -165,5 +197,20 @@ export const  ContainerSimilar = styled.section`
      
     }
 
-    
+`
+export const Section = styled.section`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+  
+    div {
+        width: 80%;
+
+        h3 {
+            font-size: 1.4rem;
+            padding: 10px 0px 0px;
+        }
+    }
+
 `

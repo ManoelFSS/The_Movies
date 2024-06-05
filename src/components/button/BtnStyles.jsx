@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSearch = styled.div`
+export const StyledSearch = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,9 +10,16 @@ export const StyledSearch = styled.div`
     cursor: pointer;
     transition: All 0.2s ;
     color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+    z-index: 1;
 
     &:hover {
         border: 1px solid rgba(255, 255, 255, 0.7);
         color: white;
+    }
+
+    .Link {
+        text-decoration: none;
     }
  `

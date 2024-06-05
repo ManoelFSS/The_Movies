@@ -64,7 +64,7 @@ export const ContainerMovies = styled.section`
      @media (max-width: 417px) {
         
          figure {
-           width: 155px;
+           width: 150px;
            height: 250px;
         }
     }

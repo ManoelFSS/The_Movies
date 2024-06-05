@@ -9,8 +9,7 @@ export const MovieDetails = () => {
     const { moviesData } = useMoviesContext()
    
     const movie = moviesData.filter((movie) => movie.id === Number(id))
-    console.log(movie)
-    
+   
     return (
        <FilmeDetails Movie={movie}/>
     )

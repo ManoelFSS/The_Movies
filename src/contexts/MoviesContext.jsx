@@ -37,6 +37,7 @@ export const MoviesContextProvider = ({ children }) => {
        
           DATA.map((movies)=> {
             movies.poster_path = `https://image.tmdb.org/t/p/w200${movies.poster_path}`
+            movies.backdrop_path = `https://image.tmdb.org/t/p/w500${movies.backdrop_path}`
           });
 
           setMoviesData(DATA);

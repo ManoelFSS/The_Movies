@@ -1,5 +1,5 @@
 import { Menu } from "../../components/menu/Menu"
-import { Search } from "../../components/button/Search"
+import { Btn } from "../../components/button/Btn"
 import { StyledHeader, HeaderConteiner, Navibar } from "./HeaderStyles"
 import { useMoviesContext } from "../../contexts/MoviesContext"
 
@@ -18,7 +18,7 @@ export const Header = ({ title }) => {
                 </h1>
                 <Navibar>
                     <Menu />
-                    <Search />
+                    <Btn />
                 </Navibar>
             </HeaderConteiner>
         </StyledHeader>
