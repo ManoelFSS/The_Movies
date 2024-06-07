@@ -12,7 +12,7 @@ export const StyledSearch = styled.button`
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(255, 255, 255, 0);
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     &:hover {
         border: 1px solid rgba(255, 255, 255, 0.7);

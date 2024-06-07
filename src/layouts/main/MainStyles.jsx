@@ -4,22 +4,12 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: center;
     margin-top: 12vh;
+
+     @media (max-width: 501px) {
+       margin-top: 15vh;
+    }
   
 `
-
-// export const Card = styled.div`
-//     transition: All 0.4s ease-in-out;
-//     box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.6);
-//     cursor: pointer;
-//     border-radius: 5px;
-//     overflow: hidden;
-//     height: 330px;
-
-//     &:hover {
-//         transform: translateY(-10px);
-//         box-shadow: 1px 4px 30px rgba(0, 0, 0, 1);
-//     }
-// `
 
 export const ContainerMovies = styled.section`
     display: grid;

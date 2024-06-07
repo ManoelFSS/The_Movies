@@ -76,8 +76,6 @@ export const FilmeDetails = ({Movie}) => {
     }
 
     const handleClearLocalStorage = () => {
-        localStorage.removeItem("id");
-        localStorage.removeItem("Movies");
         hendleCategoriaMovies(API_BASE)
     };
   

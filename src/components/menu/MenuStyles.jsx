@@ -40,4 +40,24 @@ export const StyledUl = styled.nav`
         border-left: 20px solid rgba(255, 255, 255, 0.18);
     }
 
+    @media (max-width: 1183px) {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(000, 000, 000, 0.8);
+        height: calc(100vh);
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 400px;
+        padding-left: 40px;
+        padding-top: 160px;
+        margin-left: ${props => props.ToogleMenu};
+        transition: All 0.2s ;
+        z-index: 1;
+       
+    }
+
+
  `
