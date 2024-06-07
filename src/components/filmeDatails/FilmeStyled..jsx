@@ -7,6 +7,7 @@ export const ContainerArea = styled.div`
     justify-content: center;
     background: url(${props => props.backdrop_path}) no-repeat center / 110% 100%;
     position: relative;
+   
 
     @media (max-width: 370px) {
         background:none;
@@ -27,6 +28,10 @@ export const ContainerMovie = styled.section`
 
     .link{
         text-decoration: none;
+    }
+
+    button {
+        margin-bottom: 30px;
     }
 
     div {

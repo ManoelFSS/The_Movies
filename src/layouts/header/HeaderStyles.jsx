@@ -45,7 +45,7 @@ export const Navibar = styled.section `
 
 `
 
-export const Toogle = styled.section `
+export const ButtonToogle = styled.section `
     display: none;
     width: 35px;
     height: 35px;
