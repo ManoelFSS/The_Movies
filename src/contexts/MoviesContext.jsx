@@ -69,7 +69,9 @@ export const MoviesContextProvider = ({ children }) => {
            moviesData,
            hendleCategoriaMovies,
            setToogleMenu,
-           toogleMenu
+           toogleMenu,
+           getMoviesFromDBMovies,
+           url
         }
     }>
       {children}

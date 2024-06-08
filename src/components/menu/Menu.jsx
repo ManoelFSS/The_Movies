@@ -11,7 +11,7 @@ export const Menu = () => {
     const { hendleCategoriaMovies, toogleMenu, setToogleMenu } = useMoviesContext()
    
     return (
-        <StyledUl ToogleMenu={toogleMenu === true ? "0px" : "-400px"} >
+        <StyledUl $ToogleMenu={toogleMenu === true ? "0px" : "-400px"} >
             <li onClick={() => {hendleCategoriaMovies(API_APOCALYPTIC), setToogleMenu(!toogleMenu)}}>
                 POST-APCALYPTIC
             </li>

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
     background-color: #031a33;
     display: flex;
-    height: 12vh;
     justify-content: center;
     padding: 30px 0px;
     color: white;
@@ -29,6 +28,7 @@ export const HeaderConteiner = styled.section `
         position: relative;
         z-index: 2;
     }
+
 
     @media (max-width: 440px) {
       

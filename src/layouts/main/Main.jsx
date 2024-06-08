@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { StyledMain, ContainerMovies } from "./MainStyles"
 import { useMoviesContext } from "../../contexts/MoviesContext"
 import { Link } from "react-router-dom"
@@ -8,6 +8,10 @@ import { Card } from "../../components/card/Card"
 export const Main = () => {
 
     const { moviesData } = useMoviesContext()
+
+    useEffect(() => {
+        localStorage.clear()
+    }, [])
    
     return (
         <StyledMain>

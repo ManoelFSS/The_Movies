@@ -53,10 +53,15 @@ export const StyledUl = styled.nav`
         width: 400px;
         padding-left: 40px;
         padding-top: 160px;
-        margin-left: ${props => props.ToogleMenu};
+        margin-left: ${props => props.$ToogleMenu};
         transition: All 0.2s ;
         z-index: 1;
        
+    }
+
+    @media (max-height: 501px) {
+       padding-top: 110px;
+       gap: 2rem;
     }
 
 

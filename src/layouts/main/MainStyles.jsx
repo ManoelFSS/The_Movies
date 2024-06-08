@@ -5,8 +5,13 @@ export const StyledMain = styled.main`
     justify-content: center;
     margin-top: 12vh;
 
-     @media (max-width: 501px) {
-       margin-top: 15vh;
+
+    @media (max-height: 501px) {
+        margin-top: 27vh;
+    }
+
+    @media (max-width: 501px) {
+       margin-top: 17vh;
     }
   
 `

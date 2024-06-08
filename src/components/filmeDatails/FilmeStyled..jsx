@@ -5,7 +5,7 @@ export const ContainerArea = styled.div`
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
-    background: url(${props => props.backdrop_path}) no-repeat center / 110% 100%;
+    background: url(${props => props.$backdrop_path}) no-repeat center / 110% 100%;
     position: relative;
    
 

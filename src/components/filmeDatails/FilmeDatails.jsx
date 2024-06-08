@@ -7,18 +7,20 @@ import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { useMoviesContext } from "../../contexts/MoviesContext"
 
-export const FilmeDetails = ({Movie}) => {
+export const FilmeDetails = () => {
+    
 
-    const { hendleCategoriaMovies } = useMoviesContext()
+    const {id} = useParams()
+
+    const { hendleCategoriaMovies, moviesData  } = useMoviesContext()
+    const movie = moviesData.filter((movie) => movie.id === Number(id))
 
     const getlocalMovie = JSON.parse(localStorage.getItem("Movies"))
     const getlocalid = JSON.parse(localStorage.getItem("id"))
-    
-  
-    const { id } = useParams()
+
    
-    const [moviesData, setMoviesData] = useState([]);
-    const [similarMovies, setSimilarMovies] = useState(getlocalMovie || Movie );
+    const [movieCategoria, setMoviesCategoria] = useState([]);
+    const [similarMovies, setSimilarMovies] = useState(getlocalMovie || movie );
     const [idMovie, setIdMovieId] = useState(getlocalid || id)
 
    
@@ -49,7 +51,7 @@ export const FilmeDetails = ({Movie}) => {
                     movies.backdrop_path = `https://image.tmdb.org/t/p/w500${movies.backdrop_path}`
                 });
 
-                setMoviesData(DATA);
+                setMoviesCategoria(DATA);
                 
         
             }).catch(function (error) {
@@ -65,11 +67,11 @@ export const FilmeDetails = ({Movie}) => {
      
         window.addEventListener("popstate", handleClearLocalStorage);
 
-    }, [idMovie, similarMovies, moviesData])
+    }, [idMovie, similarMovies,movieCategoria])
   
 
     const hendleMovieId = (id) => {
-        const newMovie = moviesData.filter((movie) => movie.id === id)
+        const newMovie = movieCategoria.filter((movie) => movie.id === id)
         setSimilarMovies(newMovie)
         setIdMovieId(id)
        
@@ -81,7 +83,7 @@ export const FilmeDetails = ({Movie}) => {
   
     return (
         <>
-            <ContainerArea backdrop_path={similarMovies[0].backdrop_path} >
+            <ContainerArea $backdrop_path={similarMovies[0].backdrop_path} >
                 {
                     similarMovies.map((item) => (
                         <ContainerMovie key={item.id}>
@@ -122,12 +124,12 @@ export const FilmeDetails = ({Movie}) => {
 
             <Section>
                 <div>
-                   { moviesData.length > 0 ? <h3>Related</h3> : ""}
+                   { movieCategoria.length > 0 ? <h3>Related</h3> : ""}
                 </div>
                 <ContainerSimilar>
                     <div>
                         {
-                            moviesData.map((movie) => (
+                            movieCategoria.map((movie) => (
                             <section 
                                     key={movie.id}
                                     onClick={() => hendleMovieId(movie.id)}

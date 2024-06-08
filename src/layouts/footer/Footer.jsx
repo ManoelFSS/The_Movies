@@ -1,8 +1,11 @@
+import { StyledFooter } from "./FooterStyled";
 
 export const Footer = () => {
     return (
-        <footer>
-            <h2>footer</h2>
-        </footer>
+        <StyledFooter>
+            <div>
+                <p>© Manoel Fernando para fins de estudo e aprendizado. © MB-Movies. © Fulture.</p>
+            </div>
+        </StyledFooter>
     )
 }
