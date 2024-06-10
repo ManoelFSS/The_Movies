@@ -7,10 +7,10 @@ const MoviesContext = createContext();
 // Provedor do contexto
 export const MoviesContextProvider = ({ children }) => {
 
- 
+ const [pageCaunt, setPageCount] = useState(1);
 
   const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhODAzMzJlY2Q2NzQ5ODAyM2I2NGM2NzQ5OWZiZDE1MiIsInN1YiI6IjY0MTFhOWY2ZWRlMWIwMjg2MzVkMWRiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-EYaxTyNfbwbkM_CkkFkQLH7hm0XRyXzGF3vveuhfN8';
-  const API_BASE = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1';
+  const API_BASE = `https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=`;
  
   const [toogleMenu, setToogleMenu] = useState(false);
   const [url, setUrl] = useState(API_BASE);
@@ -71,7 +71,9 @@ export const MoviesContextProvider = ({ children }) => {
            setToogleMenu,
            toogleMenu,
            getMoviesFromDBMovies,
-           url
+           url,
+           setPageCount,
+           pageCaunt
         }
     }>
       {children}

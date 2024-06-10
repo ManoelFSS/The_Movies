@@ -4,9 +4,9 @@ import { useMoviesContext } from "../../contexts/MoviesContext"
 
 export const Menu = () => {
 
-    const API_SERIES = 'https://api.themoviedb.org/3/tv/popular?language=pt-BR&page=1';
-    const API_APOCALYPTIC = 'https://api.themoviedb.org/3/movie/437342/similar?language=pt-US&page=1';
-    const API_SUPERHERO = 'https://api.themoviedb.org/3/movie/11795/similar?language=pt-US&page=1';
+    const API_SERIES = 'https://api.themoviedb.org/3/tv/popular?language=pt-BR&page=';
+    const API_APOCALYPTIC = 'https://api.themoviedb.org/3/movie/437342/similar?language=pt-US&page=';
+    const API_SUPERHERO = 'https://api.themoviedb.org/3/movie/11795/similar?language=pt-US&page=';
 
     const { hendleCategoriaMovies, toogleMenu, setToogleMenu } = useMoviesContext()
    

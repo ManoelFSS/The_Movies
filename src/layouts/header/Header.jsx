@@ -8,7 +8,7 @@ export const Header = ({ title }) => {
 
     const { hendleCategoriaMovies, setToogleMenu, toogleMenu,  } = useMoviesContext()
 
-    const API_BASE = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1';
+    const API_BASE = 'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=';
 
     return (
         <StyledHeader>
