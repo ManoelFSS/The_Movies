@@ -4,6 +4,7 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: center;
     margin-top: 12vh;
+    min-height: 100Svh;
 
 
     @media (max-height: 501px) {
@@ -63,7 +64,6 @@ export const ContainerMovies = styled.section`
            height: 250px;
         }
     }
-
 
      @media (max-width: 369px) {
         

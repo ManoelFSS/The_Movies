@@ -9,6 +9,8 @@ export const Main = () => {
 
     const { moviesData } = useMoviesContext()
 
+    console.log(moviesData)
+
     useEffect(() => {
         localStorage.clear()
     }, [])
